@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
 @import 'base/_variables.scss';
+@import 'base/_mixins.scss';
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -14,7 +15,8 @@
 }
 
 @import 'blocks/_title.scss';
-@import 'blocks/social';
+@import 'blocks/_sidepanel.scss';
 @import 'blocks/_button.scss';
 @import 'blocks/_promo.scss';
+@import 'blocks/_about.scss';
 
