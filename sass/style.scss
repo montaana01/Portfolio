@@ -1,0 +1,20 @@
+@import 'libs/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+@import 'base/_variables.scss';
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@import 'blocks/_title.scss';
+@import 'blocks/social';
+@import 'blocks/_button.scss';
+@import 'blocks/_promo.scss';
+
