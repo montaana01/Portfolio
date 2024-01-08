@@ -28,12 +28,18 @@
     &__link{
         text-decoration: none;
         &_tg{
-            img{
+            svg{
                 transform: rotate(270deg);
                 width: 20px;
                 height: 20px;
             }
-
+        }
+        &:hover{
+            svg{
+                path{
+                    fill:$blue;
+                }
+            }
         }
     }
 }
