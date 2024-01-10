@@ -1,0 +1,18 @@
+.expirience{
+    padding-top: 140px;
+    min-height: 560px;
+    &__subtitle{
+        text-align: center;
+    }
+    &__title{
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__divider{
+        margin: 25px auto 0 auto;
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: $blue;
+    }
+}
