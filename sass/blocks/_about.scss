@@ -5,10 +5,13 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 50px;
+    }
+    &__photo{
+        height: 600px;
         img {
-            height: 600px;
+            height:100%;
             border-radius: 30px;
-            border: 5px solid $blue;
+        border: 5px solid $blue;
         }
     }
     &__text{
@@ -24,24 +27,36 @@
     }
     &__divider{
         margin-top: 3px;
-        width: 60px;
-        height: 3px;
-        background: $blue;
+        margin-left: 0;
     }
     &__descr{
-        margin-top: 20px;
+        margin: 20px 0 0 0;
         width: 570px;
-        height: 123px;
+        min-height:100px;
         flex-shrink: 0;
         font-size: 14px;
-        line-height: 14px;
+        line-height: 21px;
         font-weight: 500;
     }
     &__skills{
         padding-top: 40px;
         display: grid;
         grid-template: 116px 116px / 260px 260px;
-        gap: 50px;
+        column-gap: 50px;
+        row-gap: 20px;
+        &-item{
+            width: 60px;
+            height: 40px;
+            position: relative;
+            @include before_circle;
+            svg{
+                position: absolute;
+                right: 20px;
+                bottom: -10px;
+                max-width: 25px;
+                max-height: 25px;
+            }
+        }
     }
 
     &__block{
@@ -49,20 +64,11 @@
         flex-direction: row;
     }
 
-    &_icon{
-        width: 60px;
-        height: 40px;
-        position: relative;
-        @include before_circle;
-        svg{
-            position: absolute;
-            right: 20px;
-            bottom: -10px;
-            max-width: 25px;
-            max-height: 25px;
-        }
-    }
     &__skilltext{
         width: 200px;
+    }
+
+    &__skilldescr{
+        padding-top: 6px;
     }
 }
