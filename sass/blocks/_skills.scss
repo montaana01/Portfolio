@@ -31,9 +31,41 @@
         margin-top: 120px;
         &__wrapper{
             display: grid;
-            grid-template:repeat(2, 60px) / repeat(3, 350px) ;
+            grid-template: repeat(2, minmax(60px, auto))/repeat(3, 350px);
+            grid-auto-rows: 60px;
             row-gap: 30px;
             column-gap: 45px;
+        }
+        &__text{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 36px;
+            align-items: center;  
+            &-title{
+                position: relative;
+                padding-left: 13px;
+                @include before_circle;
+            }      
+            &-range{
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+        &__scale{
+            margin-top: 20px;
+            height: 14px;
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 4px;
+            background: $gray;
+            span{
+                display: block;
+                height: 100%;
+                flex-shrink: 0;
+                border-radius: 4px;
+                background: $blue;
+            }
         }
     }
 }
