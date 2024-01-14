@@ -13,12 +13,27 @@
     &__item{
         padding: 30px;
         border: 1px solid $black;
+        &-icon{
+            display: flex;
+            height: 65px;
+            align-items: center;
+        }
         &-title{
             margin-top: 20px;
         }
         &-descr{
             margin-top: 15px;
             line-height: 21px;
+        }
+    }
+
+    &__progress{
+        margin-top: 120px;
+        &__wrapper{
+            display: grid;
+            grid-template:repeat(2, 60px) / repeat(3, 350px) ;
+            row-gap: 30px;
+            column-gap: 45px;
         }
     }
 }
