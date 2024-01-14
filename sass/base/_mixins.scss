@@ -13,3 +13,19 @@
         z-index: -1;
     }
 }
+
+@mixin section_header{
+    &__title{
+        position: relative;
+        text-align: center;
+        @include before_circle;
+        &:before {
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &__subtitle{
+        margin-top: 20px;
+        text-align: center;
+    }
+}

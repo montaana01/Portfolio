@@ -1,19 +1,7 @@
 .expirience{
     padding-top: 120px;
     min-height: 560px;
-    &__title{
-        position: relative;
-        text-align: center;
-        @include before_circle;
-        &:before {
-            left: 50%;
-            transform: translate(-50%,-50%);
-        }
-    }
-    &__subtitle{
-        margin-top: 20px;
-        text-align: center;
-    }
+    @include section_header;
     &__wrapper{
         padding: 60px 65px 0 65px;
         display: grid;
@@ -108,7 +96,6 @@
         }
         &-body{
             color: #000;
-            font-family: Poppins;
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
