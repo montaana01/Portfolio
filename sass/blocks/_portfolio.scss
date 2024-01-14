@@ -15,10 +15,24 @@
         margin: 0;
         overflow: hidden;
     }
-    #plans{
+    #pulse{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        img{
+            height: 100%;
+        }
+    }
+
+    #orshashar{
         grid-column-start: 4;
         grid-row-start: 1;
         grid-row-end: 3;
+        img{
+            height: 100%;
+            margin: 0 auto;
+        }
     }
     #mac {
         grid-column-start: 2;
