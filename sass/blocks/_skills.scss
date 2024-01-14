@@ -1,0 +1,16 @@
+.skills{
+    padding-top: 120px;
+
+    &__wrapper{
+        padding:0 10px 0 10px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(270px, auto));
+        grid-auto-columns: minmax(270px, auto);
+        grid-template-rows: repeat(2, minmax(270px, auto));
+        gap: 13px;
+    }
+    &__item{
+        
+        border: 1px solid $black;
+}
+}

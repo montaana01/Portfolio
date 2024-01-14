@@ -1,11 +1,119 @@
 .expirience{
-    padding-top: 140px;
+    padding-top: 120px;
     min-height: 560px;
-    &__subtitle{
-        text-align: center;
-    }
     &__title{
+        position: relative;
+        text-align: center;
+        @include before_circle;
+        &:before {
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &__subtitle{
         margin-top: 20px;
         text-align: center;
     }
+    &__wrapper{
+        padding: 60px 65px 0 65px;
+        display: grid;
+        grid-template-columns: repeat(2, 425px);
+        column-gap: 135px;
+    }
+    &__column {
+        &-title{
+            margin: 0;
+            position: relative;
+            padding-left: 35px;
+            &::before{
+                content: '';
+                width: 15px;
+                height: 15px;
+                flex-shrink: 0;
+                background: $blue;
+                border-radius: 100%;
+                position: absolute;
+                left: -7px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 45;
+            }
+        }
+
+        ul{
+            list-style-type: none;
+            li{
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 1px;
+                    height: calc(100% + 16px);
+                    background-color: $black;
+                    position: absolute;
+                    top: -16px;
+                    left: 0px;
+                    z-index: 40;
+                }
+            }
+        }
+    }
+
+    &__item{
+        position: relative;
+        padding-left: 42px;
+        &::before{
+            content:'';
+            height: 1px;
+            width:43px;
+            position: absolute;
+            background-color: $black;
+            left:0;
+            top:65px;
+            z-index: 41;
+        }
+        &-head{
+            position: relative;
+            padding: 45px 0 0 56px;
+            h4{
+                margin: 0;
+            }
+        }
+        &-body{
+            margin-top: 12px;
+
+        }
+
+        &-icon{
+            position: absolute;
+            top: 65px;
+            left: 0;
+            @include before_circle;
+            &:before{
+                width: 36px;
+                height: 36px;
+                flex-shrink: 0;
+                z-index: 50;
+            }
+            img{
+                position: absolute;
+                left: 17px;
+                top: 0;
+                z-index: 51;
+            }
+        }
+        &-descr{
+            margin-top: 5px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &-body{
+            color: #000;
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+
 }

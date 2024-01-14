@@ -57,18 +57,19 @@
                 max-height: 25px;
             }
         }
+
+        &-text{
+            width: 200px;
+        }
+
+        &-descr{
+            padding-top: 6px;
+        }
+
     }
 
     &__block{
         display: flex;
         flex-direction: row;
-    }
-
-    &__skilltext{
-        width: 200px;
-    }
-
-    &__skilldescr{
-        padding-top: 6px;
     }
 }
