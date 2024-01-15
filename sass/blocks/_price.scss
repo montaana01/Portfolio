@@ -2,4 +2,8 @@
     margin-top: 60px;
     min-height: 280px;
     @include section_header;
+    &__wrapper{
+        display: grid;
+        justify-content: space-between;
+    }
 }
