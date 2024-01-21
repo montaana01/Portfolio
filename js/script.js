@@ -1,6 +1,7 @@
 const hamburger = document.querySelector('.hamburger'),
     menu = document.querySelector('.menu'),
-    close = document.querySelector('.menu__close');
+    close = document.querySelector('.menu__close'),
+    menuLink = document.querySelectorAll('.menu__link');
 
 hamburger.addEventListener('click', () =>{
     menu.classList.add('active');
@@ -9,6 +10,12 @@ hamburger.addEventListener('click', () =>{
 close.addEventListener('click', () =>{
     menu.classList.remove('active');
 });
+
+menuLink.forEach((link)=>
+    link.addEventListener('click',()=>{ 
+        menu.classList.remove('active');
+}));
+
 
 const counters = document.querySelectorAll('.range'),
       lines = document.querySelectorAll('.skills__progress__scale span');
