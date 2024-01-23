@@ -11,10 +11,15 @@ close.addEventListener('click', () =>{
     menu.classList.remove('active');
 });
 
-menuLink.forEach((link)=>
+function closeTab() {
+    menuLink.forEach((link)=>
     link.addEventListener('click',()=>{ 
         menu.classList.remove('active');
 }));
+};
+
+setTimeout(closeTab, 1500);
+
 
 
 const counters = document.querySelectorAll('.range'),
