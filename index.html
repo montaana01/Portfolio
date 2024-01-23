@@ -688,13 +688,24 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="contacts__form">
-                        <div class="contacts__form-title title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
-                        <div class="contacts__form-name"><input type="text">Ваше имя</div>
-                        <div class="contact__form-email"><input type="email">Ваша почта</div>
-                        <div class="contacts__form-text"><input type="text"></div>
+                    <div class="contacts__header title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
+                    <form action="#" class="contacts__form">
+                        <div class="contacts__form-input">
+                            <input name="name" id="name" type="text">
+                            <label for="name" class="title_fz12">Ваше имя</label>
+                        </div>
+
+                        <div class="contacts__form-input">
+                            <input name="email" id="email" type="email">
+                            <label for="email" class="title_fz12">Ваша почта</label>
+                        </div>
+
+                        <div class="contacts__form-textarea">
+                            <textarea name="text" id="text"></textarea>
+                            <label for="text" class="title_fz12">Ваше сообщение</label>
+                        </div>
                         <button class="contacts__form-btn btn">Отправить сообщение</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
