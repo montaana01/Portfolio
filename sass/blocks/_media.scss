@@ -1,8 +1,99 @@
-@media (max-width: 769px) { 
-    .menu{
-        &__block{
-            width: 70%;
+@media (max-width:1300px) {
+    .hamburger{
+        z-index: 10;
+    }
+    .sidepanel{
+        display: none;
+    }
+}
+@media (max-width: 1200px) { 
+    .container{
+        max-width: 960px;
+    }
+    .promo{
+        &__photo{
+            right: calc(50% - 480px);
         }
     }
-    
+}
+@media (max-width: 992px) { 
+    .container{
+        max-width: 720px;
+    }
+    .promo{
+        min-height: 100vh;
+
+        &__photo{
+            right:0;
+            width: 50%;
+            overflow: hidden;
+        }
+    }
+}
+@media (max-width: 768px) { 
+    .container{
+        max-width: 540px;
+    }
+
+    .promo{
+        &__photo{
+            bottom: 0;
+            right: 0;
+            width: 60%;
+            overflow: hidden;
+        }
+    }
+}
+@media (max-width: 576px) { 
+    .hamburger{
+        z-index: 10;
+    }
+    .container{
+        padding: 0 10px;
+        width: 100%;
+    }
+    .menu{
+        &__block{
+            width: 250px;
+            padding-top: 140px;
+            padding-left: 20px;
+        }
+    }
+    .promo{
+        padding-top: 200px;
+        &__subtitle{
+            color: $white;
+            span{
+                color: $black
+            }
+            z-index: 11;
+        }
+        &__title{
+            position: relative;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 38px;
+            color: $white;
+            z-index: 12;
+        }
+        &__wrapper{
+            position: relative;
+            z-index: 10;
+        }
+        &__link{
+            color: $white;
+        }
+        .btn{
+            color: $black;
+        }
+        &__photo{
+            width: calc(90% - 50px);
+            overflow: hidden;
+            img{
+                z-index: -1;
+                height: 105vh;
+            }
+        }
+    }
+
 }

@@ -94,6 +94,9 @@
             }
 
         }
+        &:nth-child(1){
+            margin-top: 0;
+        }
     }
     &__social{
         position: absolute;
