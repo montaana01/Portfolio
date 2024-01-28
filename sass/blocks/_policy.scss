@@ -1,0 +1,27 @@
+.policy{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, #92ddff 100%);
+    position: relative;
+    padding-top: 40px;
+    h1,h2{
+        text-align: center;
+    }
+    &__back{
+        position: fixed;
+        right: 40px;
+        text-align: center;
+        bottom: 40px;
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 36px;
+        background-color: $blue;
+        border: 2px solid #7dc0ff;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0, 0, 0.89, 0.38);
+        &:hover{
+            background-color: rgba($blue, $alpha: 0.3);
+            border-color: #0b67bd;
+        }
+    }
+}
