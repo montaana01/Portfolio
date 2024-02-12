@@ -48,6 +48,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -712,8 +713,20 @@
                                     <a href="/policy.html">Политикой конфиденциальности</a>
                                 </span>
                             </div>
-
                         </div>
+                        <form action="?" method="POST">
+                            <div class="g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh"></div>
+                            <br />
+                            <input type="submit" value="Submit">
+                            <script type="text/javascript">
+                                var onloadCallback = function () {
+                                    alert("grecaptcha is ready!");
+                                };
+                            </script>
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                                async defer>
+                                </script>
+                        </form>
                     </form>
 
                 </div>
