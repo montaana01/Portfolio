@@ -690,7 +690,7 @@
                         </a>
                     </div>
                     <div class="contacts__header title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
-                    <form action="#" class="contacts__form">
+                    < action="#" class="contacts__form">
                         <div class="contacts__form-input">
                             <input required name="name" id="name" type="text">
                             <label for="name" class="title_fz12">Ваше имя</label>
@@ -714,20 +714,12 @@
                                 </span>
                             </div>
                         </div>
-                        <form action="?" method="POST">
-                            <div class="g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh"></div>
-                            <br />
-                            <input type="submit" value="Submit">
-                            <script type="text/javascript">
-                                var onloadCallback = function () {
-                                    alert("grecaptcha is ready!");
-                                };
-                            </script>
-                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-                                async defer>
-                                </script>
+
+                        <div class="g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh"></div>
+                        <br />
+                        <input type="submit" value="Submit">
+
                         </form>
-                    </form>
 
                 </div>
             </div>
