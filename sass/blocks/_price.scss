@@ -20,6 +20,7 @@
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, minmax(14px,auto));
         &-title{
+            padding-right: 10px;
             position: relative;
             justify-self: start;
             font-weight: 700;
@@ -37,6 +38,7 @@
             }
         }
         &-price{
+            min-width: 88px;
             justify-self: end;
             font-weight: 700;
         }

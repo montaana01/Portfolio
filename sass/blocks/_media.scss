@@ -15,6 +15,59 @@
             right: calc(50% - 480px);
         }
     }
+    .about{
+        &__wrapper{
+            grid-template-columns: 400px 520px;
+            column-gap: 40px;
+        }
+        &__descr{
+            width: 100%;
+        }
+        &__skills {
+            column-gap: 20px;
+            grid-template: repeat(2,minmax(105px,auto))/repeat(2,250px);
+        }
+    }
+    .experience{
+        &__wrapper{
+            grid-template-columns: repeat(2,minmax(340px, auto));
+        }
+    }
+    .skills{
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 270px);
+            justify-content: space-between;
+        }
+        &__item{
+            padding: 20px;
+        }
+        &__progress{
+            &__wrapper{
+                grid-template: repeat(2, minmax(60px, auto))/repeat(3, minmax(280px, auto));
+            }
+        }
+    }
+    .portfolio{
+        &__wrapper{
+            margin-top: 30px;
+            grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+            grid-auto-rows: 1fr;
+        }
+    }
+    .contacts{
+        &__wrapper{
+            grid-template-columns: 380px 490px;
+            column-gap: 40px;
+        }
+        &__form{
+            grid-template: minmax(45px, auto)/repeat(2, auto);
+            &-policy{
+                span{
+                    line-height: 15px;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 992px) { 
     .container{
@@ -27,6 +80,98 @@
             right:0;
             width: 50%;
             overflow: hidden;
+        }
+    }
+    .about{
+        padding-top: 60px;
+        padding-bottom: 10px;
+        &__wrapper{
+            grid-template-columns: 300px 380px;
+            column-gap: 30px;
+        }
+        &__photo{
+            height: calc(100% + 10px);
+        }
+        &__text{
+            padding-top: 15px;
+        }
+        &__descr{
+            margin-top: 10px;
+        }
+        &__title{
+            padding-top: 0;
+            line-height: 52px;
+            font-size: 28px;
+        }
+        &__skills{
+            padding-top: 10px;
+            grid-template: 1fr / 1fr;
+            grid-auto-rows: 1fr;
+            row-gap: 10px;
+            &-text{
+                width: calc(100% - 60px);
+            }
+        }
+    }
+    .experience{
+        padding-top: 60px;
+        &__wrapper{
+            padding: 30px 30px 0 30px;
+            grid-template-columns: repeat(2,minmax(275px, auto));
+            column-gap: 100px;
+        }
+    }
+    .skills{
+        padding-top: 60px;
+        &__item{
+            padding: 20px;
+        }
+        &__progress{
+            margin-top: 60px;
+            &__wrapper{
+                grid-template: repeat(2, minmax(60px, auto))/repeat(2, minmax(280px, auto));
+            }
+        }
+    }
+    .portfolio{
+        min-height: 690px;
+        padding-top: 60px;
+        &__wrapper{
+            justify-content: center;
+            grid-template: repeat(auto-fit, 235px)/repeat(auto-fit, 235px);
+            grid-auto-rows: 235px;
+            grid-auto-rows: 1fr;
+        }
+        #pulse, #orshashar, #mac{
+            grid-column: unset;
+            grid-row: unset;
+        }
+    }
+    .price {
+        &__wrapper{
+            padding: 40px 30px 0 55px ;
+            grid-template-columns: repeat(auto-fit, 270px);
+            grid-auto-columns: 270px;
+            row-gap: 15px;
+        }
+    }
+    .contacts{
+        padding: 0 40px;
+        &__image{
+            display: none;
+        }
+        &__wrapper{
+            padding: 0;
+            grid-template-columns: 1fr;
+        }
+        &__form{
+            grid-template: minmax(45px, auto)/repeat(2, auto);
+            &-policy{
+                span{
+                    line-height: 15px;
+                    text-align: center;
+                }
+            }
         }
     }
 }
@@ -43,6 +188,64 @@
             overflow: hidden;
         }
     }
+
+    .about{
+        padding-top: 30px;
+        &__wrapper{
+            grid-template: auto auto auto / 1fr;
+            row-gap: 20px;
+        }
+        &__photo{
+            height: 400px;
+        }
+        &__skills{
+            padding-top: 20px;
+            row-gap: 20px;
+            grid-template: repeat(2, minmax(100px, auto))/repeat(2, 260px);
+        }
+        
+    }
+
+    .experience{
+        &__wrapper{
+            padding-left: 15px;
+            padding-right: 15px;
+            grid-template-columns: repeat(2, minmax(200px, auto));
+            column-gap: 40px;
+        }
+    }
+
+    .skills{
+        &__subtitle{
+            font-size: 28px;
+            line-height: 46px;
+        }
+        &__item{
+            padding: 20px;
+        }
+        &__wrapper{
+            justify-content: center;
+        }
+        &__progress{
+            &__wrapper{
+                grid-template: repeat(2, minmax(60px, auto))/repeat(2, minmax(250px, auto));
+                column-gap: 30px;
+            }
+        }
+    }
+    .price {
+        &__wrapper{
+            padding: 40px 0 0 25px;
+            grid-template-columns: repeat(auto-fit, 235px);
+        }
+    }
+    .contacts{
+        &__form{
+            &-btn{
+                width: 185px;
+            }
+        }
+    }
 }
 @media (max-width: 576px) { 
     .hamburger{
@@ -51,6 +254,11 @@
     .container{
         padding: 0 10px;
         width: 100%;
+    }
+    .title{
+        &_fz36{
+            font-size: 24px;
+        }
     }
     .menu{
         &__block{
@@ -96,4 +304,83 @@
         }
     }
 
+    .about{
+        &__wrapper{
+            grid-template: 340px auto / 1fr;
+        }
+        &__photo{
+            height: 100%;
+        }
+        &__title{
+            font-size: 24px;
+        }
+        &__skills{
+            grid-template-columns: 1fr;
+            grid-auto-rows: 100px;
+        }
+    }
+
+    .experience{
+        padding-top: 30px;
+        &__subtitle{
+            font-size: 28px;
+            line-height: 42px;
+        }
+        &__wrapper{
+            padding-left: 40px;
+            padding-right: 40px;
+            grid-template: 1fr 1fr / 1fr;
+            column-gap: 40px;
+        }
+    }
+
+    .skills{
+        &__subtitle{
+            font-size: 22px;
+            line-height: 33px;
+        }
+        &__item{
+            padding: 20px;
+        }
+        &__progress{
+            &__wrapper{
+                padding: 0 40px;
+                grid-template: repeat(2, minmax(60px, auto)) / 1fr;
+                column-gap: 30px;
+            }
+        }
+    }
+    .price {
+        &__wrapper{
+            padding: 40px 40px 0 65px;
+            grid-template-columns: 1fr;
+        }
+    }
+    .contacts{
+        &__subtitle{
+            font-size: 28px;
+            line-height: 36px;
+        }
+        &__social{
+            text-align: center;
+        }
+        &__link{
+            margin-right: 15px;
+        }
+        &__form{
+            grid-template: repeat(auto-fit, minmax(45px, auto)) / 1fr;
+            &-textarea{
+                grid-column: unset;
+            }
+            &-triggers{
+                grid-column: unset;
+            }
+            &-captcha{
+                grid-column: unset;
+            }
+            &-btn{
+                width: 185px;
+            }
+        }
+    }
 }

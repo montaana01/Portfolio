@@ -44,6 +44,7 @@
         padding-top: 40px;
         display: grid;
         grid-template: 116px 116px / 260px 260px;
+        grid-auto-rows: 116px;
         column-gap: 50px;
         row-gap: 20px;
         &-item{

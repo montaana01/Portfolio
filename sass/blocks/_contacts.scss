@@ -61,7 +61,7 @@
     &__form{
         margin-top: 30px;
         display: grid;
-        grid-template: minmax(45px, auto) / repeat(2, 280px);
+        grid-template: minmax(45px, auto)/repeat(2, auto);
         gap: 25px;
         
         &-input{
@@ -79,7 +79,7 @@
         &-textarea{
             grid-column: 1/3;
             position: relative;
-            height: 180px;
+            height: 90px;
             textarea{
                 padding: 20px;
                 width: 100%;
@@ -126,6 +126,9 @@
                 font-size: 12px;
                 line-height: 45px;
             }
+        }
+        &-captcha{
+            grid-column: 1/3;
         }
     }
 }
