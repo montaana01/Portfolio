@@ -374,6 +374,9 @@
             }
             &-triggers{
                 grid-column: unset;
+                grid-template-columns: none;
+                grid-template-rows: repeat(2, auto);
+                row-gap: 20px;
             }
             &-captcha{
                 grid-column: unset;
