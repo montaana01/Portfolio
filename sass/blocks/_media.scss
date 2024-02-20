@@ -378,7 +378,11 @@
                 grid-template-rows: repeat(2, auto);
                 row-gap: 20px;
             }
+            &-captcha.div{
+                margin: 0 -22px;
+            }
             &-captcha{
+                overflow:inherit!important;
                 grid-column: unset;
             }
             &-btn{
