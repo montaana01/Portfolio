@@ -47,6 +47,7 @@ if (isset($_POST['form'])) {
 # echo json_encode(array('success' => 'false', 'om_score' => $responseKeys["score"], 'recaptchaG' => $_POST['recaptchaG']));
 # }
 #
+
 <meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
 <meta charset="UTF-8" />
 

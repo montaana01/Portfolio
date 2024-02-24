@@ -635,8 +635,8 @@
         </div>
     </section>
     <script src="js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh" async defer>
-    </script>
+    <!--  <script src="https://www.google.com/recaptcha/api.js?render=6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh" async defer>
+ --> </script>
 
 </body>
 
