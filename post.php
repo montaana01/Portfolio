@@ -1,4 +1,35 @@
 <?php
+function reCaptcha($recaptcha)
+{
+    $secret = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    $postvars = array("secret" => $secret, "response" => $recaptcha, "remoteip" => $ip);
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+    $data = curl_exec($ch);
+    curl_close($ch);
+
+    return json_decode($data, true);
+}
+
+$recaptcha = $_POST['g-recaptcha-response'];
+
+$res = reCaptcha($recaptcha);
+
+if ($res['success']) {
+    $email = $_POST['email'];
+    echo "Success " . $email;
+} else {
+    echo "CAPTCHA Failed";
+}
+?>
+<!-- 
 if (isset($_POST['form'])) {
     if (!isset($_POST['g-recaptcha-response']) || empty($_POST['g-recaptcha-response'])) {
         echo 'Вы не прошли проверку reCAPTHCA.';
@@ -21,8 +52,7 @@ if (isset($_POST['form'])) {
         }
     }
 }
-
-?>
+ -->
 
 # $captcha;
 # if (isset($_POST['recaptchaG'])) {
@@ -48,10 +78,9 @@ if (isset($_POST['form'])) {
 # }
 #
 
-<meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
+<!-- <meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
 <meta charset="UTF-8" />
 
-<?php
 // Получаем значения переменных из пришедших данных
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -69,4 +98,4 @@ if ($send == 'true') {
 else {
     echo "Ой, что-то пошло не так";
 }
-?>
+ -->

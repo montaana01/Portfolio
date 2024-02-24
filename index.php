@@ -45,6 +45,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer> </script>
 </head>
 
 <body>
@@ -600,7 +601,7 @@
                         </a>
                     </div>
                     <div class="contacts__header title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
-                    <form action="post.php" class="contacts__form" method="post" name="form">
+                    <form action="post.php" class="contacts__form" method="POST">
                         <div class="contacts__form-input">
                             <input required name="name" id="name" type="text">
                             <label for="name" class="title_fz12">Ваше имя</label>
