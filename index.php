@@ -617,6 +617,9 @@
                             <label for="text" class="title_fz12">Ваше сообщение</label>
                         </div>
 
+                        <div class="contacts__form-captcha g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh">
+                        </div>
+
                         <div class="contacts__form-triggers">
                             <button class="contacts__form-btn btn">Отправить сообщение</button>
                             <div class="contacts__form-policy">
@@ -626,9 +629,6 @@
                                 </span>
                             </div>
                         </div>
-
-                        <div class="contacts__form-captcha g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh">
-                        </div>
                     </form>
 
                 </div>
@@ -636,7 +636,7 @@
         </div>
     </section>
     <script src="js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh" async defer> </script>
+    <!--  <script src="https://www.google.com/recaptcha/api.js?render=6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh" async defer> </script> -->
 
 </body>
 
