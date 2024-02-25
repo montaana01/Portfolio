@@ -1,56 +1,62 @@
 <?php
-// Проверка наличия данных формы
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Проверка наличия данных reCAPTCHA
     if (isset($_POST['g-recaptcha-response'])) {
         $captcha = $_POST['g-recaptcha-response'];
     }
-    // Если нет данных reCAPTCHA, остановим выполнение скрипта
     if (!$captcha) {
-        echo '<h2>Please check the reCAPTCHA box.</h2>';
+        echo 'Please check the reCAPTCHA box.';
         exit;
     }
 
-    // Секретный ключ вашего сайта
     $secretKey = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
 
-    // Проверка reCAPTCHA
     $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha);
     $responseKeys = json_decode($response, true);
 
-    // Если reCAPTCHA не прошла проверку, выведите ошибку
     if (intval($responseKeys["success"]) !== 1) {
-        echo '<h2>reCAPTCHA verification failed!</h2>';
+        echo 'reCAPTCHA verification failed!';
     } else {
-        // Если reCAPTCHA прошла проверку, продолжаем обработку формы
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
+        $language = $_POST['language'];
 
-        // Формируем тело сообщения
-        $body = "Name: $name\n";
-        $body .= "Email: $email\n";
-        $body .= "Message:\n$message";
+        $body = "";
+        switch ($language) {
+            case 'en':
+                $body .= "Name: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Message:\n$message";
+                break;
+            case 'ru':
+                $body .= "Имя: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Сообщение:\n$message";
+                break;
+            default:
+                $body .= "Name: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Message:\n$message";
+                break;
+        }
 
-        // Отправляем письмо на вашу почту
         $to = "yakovlev@yakovlevdev.com";
         $subject = "Feedback Form Submission";
-        $headers = "From: $email \r\n";
-        $headers .= "Reply-To: $email \r\n";
+        $headers = "From: $sender_email \r\n";
+        $headers .= "Content-type: text/plain; charset=utf-8\r\n";
 
-        // Отправляем письмо
         if (mail($to, $subject, $body, $headers)) {
-            echo '<h2>Thank you for your feedback!</h2>';
+            echo 'success';
         } else {
-            echo '<h2>Sorry, something went wrong. Please try again later.</h2>';
+            echo 'failed';
         }
     }
 } else {
-    // Если попытка доступа к скрипту напрямую, перенаправляем на главную страницу
     header("Location: index.php");
     exit;
 }
 ?>
+
 
 
 <!-- <meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
