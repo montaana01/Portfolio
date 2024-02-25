@@ -33,7 +33,7 @@ counters.forEach((item, i)=>{
 function submitForm() {
     var formData = new FormData(document.getElementById("feedbackForm"));
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "send_feedback.php", true);
+    xhr.open("POST", "post.php", true);
     xhr.onload = function () {
         if (xhr.status === 200) {
             // Response from send_feedback.php
