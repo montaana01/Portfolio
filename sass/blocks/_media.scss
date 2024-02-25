@@ -380,12 +380,14 @@
                 row-gap: 20px;
             }
             &-captcha{
+                grid-column: unset;
                 display: block;
                 position: absolute;
                 left: 0px;
                 bottom: -100px;
             }
             &-btn{
+                grid-column: unset;
                 width: 185px;
             }
         }

@@ -56,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
 }
 ?>
+<meta http-equiv='refresh' content='5; url=https://yakovlevdev.com/#conacts'>
+<meta charset="UTF-8" />
 
 
 
