@@ -1,83 +1,58 @@
 <?php
-function reCaptcha($recaptcha)
-{
-    $secret = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
-    $ip = $_SERVER['REMOTE_ADDR'];
+// Проверка наличия данных формы
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Проверка наличия данных reCAPTCHA
+    if (isset($_POST['g-recaptcha-response'])) {
+        $captcha = $_POST['g-recaptcha-response'];
+    }
+    // Если нет данных reCAPTCHA, остановим выполнение скрипта
+    if (!$captcha) {
+        echo '<h2>Please check the reCAPTCHA box.</h2>';
+        exit;
+    }
 
-    $postvars = array("secret" => $secret, "response" => $recaptcha, "remoteip" => $ip);
-    $url = "https://www.google.com/recaptcha/api/siteverify";
+    // Секретный ключ вашего сайта
+    $secretKey = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-    $data = curl_exec($ch);
-    curl_close($ch);
+    // Проверка reCAPTCHA
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha);
+    $responseKeys = json_decode($response, true);
 
-    return json_decode($data, true);
-}
-
-$recaptcha = $_POST['g-recaptcha-response'];
-
-$res = reCaptcha($recaptcha);
-
-if ($res['success']) {
-    $email = $_POST['email'];
-    echo "Success " . $email;
-} else {
-    echo "CAPTCHA Failed";
-}
-?>
-<!-- 
-if (isset($_POST['form'])) {
-    if (!isset($_POST['g-recaptcha-response']) || empty($_POST['g-recaptcha-response'])) {
-        echo 'Вы не прошли проверку reCAPTHCA.';
+    // Если reCAPTCHA не прошла проверку, выведите ошибку
+    if (intval($responseKeys["success"]) !== 1) {
+        echo '<h2>reCAPTCHA verification failed!</h2>';
     } else {
-        $secret = '6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV';
+        // Если reCAPTCHA прошла проверку, продолжаем обработку формы
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $response = json_decode($response);
+        // Формируем тело сообщения
+        $body = "Name: $name\n";
+        $body .= "Email: $email\n";
+        $body .= "Message:\n$message";
 
-        if ($response->success) {
-            // What happens when the CAPTCHA was entered incorrectly
-            echo 'Successful login.';
+        // Отправляем письмо на вашу почту
+        $to = "yakovlev@yakovlevdev.com";
+        $subject = "Feedback Form Submission";
+        $headers = "From: $email \r\n";
+        $headers .= "Reply-To: $email \r\n";
+
+        // Отправляем письмо
+        if (mail($to, $subject, $body, $headers)) {
+            echo '<h2>Thank you for your feedback!</h2>';
         } else {
-            // Your code here to handle a successful verification
-            echo 'reCAPTHCA verification failed, please try again.';
+            echo '<h2>Sorry, something went wrong. Please try again later.</h2>';
         }
     }
+} else {
+    // Если попытка доступа к скрипту напрямую, перенаправляем на главную страницу
+    header("Location: index.php");
+    exit;
 }
- -->
-<!-- 
-# $captcha;
-# if (isset($_POST['recaptchaG'])) {
-# $captcha = $_POST['recaptchaG'];
-# }
-#
-# $secretKey = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
-#
-# $ip = $_SERVER['REMOTE_ADDR'];
-#
-# // post request to server
-#
-# $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $_POST['recaptchaG'];
-#
-# $response = file_get_contents($url);
-# $responseKeys = json_decode($response, true);
-# header('Content-type: application/json');
-#
-# if ($responseKeys["success"] && $responseKeys["score"] >= 0.5) {
-# echo json_encode(array('success' => 'true', 'om_score' => $responseKeys["score"], 'recaptchaG' => $_POST['recaptchaG']));
-# } else {
-# echo json_encode(array('success' => 'false', 'om_score' => $responseKeys["score"], 'recaptchaG' => $_POST['recaptchaG']));
-# }
-#
- -->
+?>
+
+
 <!-- <meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
 <meta charset="UTF-8" />
 

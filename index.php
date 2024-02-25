@@ -613,7 +613,7 @@
                         </div>
 
                         <div class="contacts__form-textarea">
-                            <textarea name="text" id="text"></textarea>
+                            <textarea name="message" id="message"></textarea>
                             <label for="text" class="title_fz12">Ваше сообщение</label>
                         </div>
 
