@@ -601,7 +601,7 @@
                         </a>
                     </div>
                     <div class="contacts__header title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
-                    <form action="post.php" class="contacts__form" method="POST">
+                    <form action="#" class="contacts__form" method="POST">
                         <div class="contacts__form-input">
                             <input required name="name" id="name" type="text">
                             <label for="name" class="title_fz12">Ваше имя</label>
