@@ -382,9 +382,9 @@
             &-captcha{
                 grid-column: unset;
                 display: block;
-                position: absolute;
-                left: 0px;
-                bottom: -100px;
+                transform:scale(0.75);
+                transform-origin:50% 50%;
+
             }
             &-btn{
                 grid-column: unset;

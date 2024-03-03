@@ -36,7 +36,7 @@ function submitForm() {
     xhr.open("POST", "post.php", true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            // Response from send_feedback.php
+            // Response from post.php
             console.log(xhr.responseText);
             // Handle response as needed (e.g., display success message)
             // For example:
