@@ -1,25 +1,84 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['g-recaptcha-response'])) {
+        $captcha = $_POST['g-recaptcha-response'];
+    }
+    if (!$captcha) {
+        echo 'Please check the reCAPTCHA box.';
+        exit;
+    }
 
+    $secretKey = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
 
-$captcha;
-if (isset($_POST['recaptchaG'])) {
-    $captcha = $_POST['recaptchaG'];
-}
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha);
+    $responseKeys = json_decode($response, true);
 
-$secretKey = "6LdN6m4pAAAAADSp72wcbdP4rogNrISx4DZXVRbV";
+    if (intval($responseKeys["success"]) !== 1) {
+        echo 'reCAPTCHA verification failed!';
+    } else {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        $language = $_POST['language'];
 
-$ip = $_SERVER['REMOTE_ADDR'];
+        $body = "";
+        switch ($language) {
+            case 'en':
+                $body .= "Name: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Message:\n$message";
+                break;
+            case 'ru':
+                $body .= "Имя: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Сообщение:\n$message";
+                break;
+            default:
+                $body .= "Name: $name\n";
+                $body .= "Email: $email\n";
+                $body .= "Message:\n$message";
+                break;
+        }
 
-// post request to server
+        $to = "yakovlev@yakovlevdev.com";
+        $subject = "Feedback Form Submission";
+        $headers = "From: $sender_email \r\n";
+        $headers .= "Content-type: text/plain; charset=utf-8\r\n";
 
-$url =  'https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey .  '&response=' . $_POST['recaptchaG'];
-
-$response = file_get_contents($url);
-$responseKeys = json_decode($response, true);
-header('Content-type: application/json');
-
-if ($responseKeys["success"] && $responseKeys["score"] >= 0.5) {
-    echo json_encode(array('success' => 'true', 'om_score' => $responseKeys["score"], 'recaptchaG' => $_POST['recaptchaG']));
+        if (mail($to, $subject, $body, $headers)) {
+            echo 'success';
+        } else {
+            echo 'failed';
+        }
+    }
 } else {
-    echo json_encode(array('success' => 'false', 'om_score' => $responseKeys["score"], 'recaptchaG' => $_POST['recaptchaG']));
+    header("Location: index.php");
+    exit;
 }
+?>
+<meta http-equiv='refresh' content='0.1; url=https://yakovlevdev.com/#conacts'>
+<meta charset="UTF-8" />
+
+
+
+<!-- <meta http-equiv='refresh' content='10; url=https://yakovlevdev.com/#conacts'>
+<meta charset="UTF-8" />
+
+// Получаем значения переменных из пришедших данных
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+// Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме
+$mes = "Имя: $name \nE-mail: $email \nТекст: $message";
+// Пытаемся отправить письмо по заданному адресу
+// Если нужно, чтобы письма всё время уходили на ваш адрес — замените первую переменную $email на свой адрес электронной почты
+$send = mail('yakovlev@yakovlevdev.com', $header, $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:yakovlev@yakovlevdev.com");
+// Если отправка прошла успешно — так и пишем
+if ($send == 'true') {
+    echo "Сообщение отправлено";
+}
+// Если письмо не ушло — выводим сообщение об ошибке
+else {
+    echo "Ой, что-то пошло не так";
+}
+ -->

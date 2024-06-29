@@ -369,16 +369,25 @@
         }
         &__form{
             grid-template: repeat(auto-fit, minmax(45px, auto)) / 1fr;
+            position: relative;
             &-textarea{
                 grid-column: unset;
             }
             &-triggers{
                 grid-column: unset;
+                grid-template-columns: none;
+                grid-template-rows: repeat(2, auto);
+                row-gap: 20px;
             }
             &-captcha{
                 grid-column: unset;
+                display: block;
+                position: absolute;
+                left: 0px;
+                bottom: -100px;
             }
             &-btn{
+                grid-column: unset;
                 width: 185px;
             }
         }

@@ -45,7 +45,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/style.min.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer> </script>
 </head>
 
 <body>
@@ -378,10 +378,10 @@
                     <div class="skills__item-descr title_fz12">Библиотека Jquery позволит ускорить разработку. Без
                         необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует</div>
                 </div>
-
+                <!--
                 <div class="skills__item">
                     <div class="skills__item-icon">
-                        <img src="icon/skills/React.svg" alt="React">
+                        <img src="icon/skills/react.svg" alt="React">
                     </div>
                     <div class="skills__item-title title title_fz14">React</div>
                     <div class="skills__item-descr title_fz12">Эта библиотека позволяет создавать web-приложения. Мы
@@ -399,80 +399,80 @@
 
                 <div class="skills__item">
                     <div class="skills__item-icon">
-                        <img src="icon/skills/Mongo.db.svg" alt="Mongo.db">
+                        <img src="icon/skills/mongo.db.svg" alt="Mongo.db">
                     </div>
                     <div class="skills__item-title title title_fz14">Mongo.db</div>
                     <div class="skills__item-descr title_fz12">Это нереляционная база данных, которая будет хранить
                         данные вашего сайта или приложения</div>
                 </div>
             </div>
+-->
+                <div class="skills__progress">
+                    <div class="skills__progress__wrapper">
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Создание сайтов</div>
+                                <div class="skills__progress__text-range range">100%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
+                        </div>
 
-            <div class="skills__progress">
-                <div class="skills__progress__wrapper">
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Создание сайтов</div>
-                            <div class="skills__progress__text-range range">100%</div>
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Создание приложений</div>
+                                <div class="skills__progress__text-range range">5%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
                         </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
+
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Работа с данными</div>
+                                <div class="skills__progress__text-range range">85%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
                         </div>
+
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Креативность</div>
+                                <div class="skills__progress__text-range range">65%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Создание дизайна</div>
+                                <div class="skills__progress__text-range range">70%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__progress__item">
+                            <div class="skills__progress__text">
+                                <div class="skills__progress__text-title title title_fz14">Soft skills</div>
+                                <div class="skills__progress__text-range range">95%</div>
+                            </div>
+                            <div class="skills__progress__scale">
+                                <span></span>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Создание приложений</div>
-                            <div class="skills__progress__text-range range">5%</div>
-                        </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Работа с данными</div>
-                            <div class="skills__progress__text-range range">85%</div>
-                        </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Креативность</div>
-                            <div class="skills__progress__text-range range">65%</div>
-                        </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Создание дизайна</div>
-                            <div class="skills__progress__text-range range">70%</div>
-                        </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__progress__item">
-                        <div class="skills__progress__text">
-                            <div class="skills__progress__text-title title title_fz14">Soft skills</div>
-                            <div class="skills__progress__text-range range">95%</div>
-                        </div>
-                        <div class="skills__progress__scale">
-                            <span></span>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-        </div>
+            </div>
     </section>
 
     <section class="portfolio" id="portfolio">
@@ -601,7 +601,7 @@
                         </a>
                     </div>
                     <div class="contacts__header title_fz14">Или оставьте ваши данные и я сама вам напишу:</div>
-                    <form action="#" class="contacts__form">
+                    <form action="post.php" class="contacts__form" method="POST">
                         <div class="contacts__form-input">
                             <input required name="name" id="name" type="text">
                             <label for="name" class="title_fz12">Ваше имя</label>
@@ -613,8 +613,12 @@
                         </div>
 
                         <div class="contacts__form-textarea">
-                            <textarea name="text" id="text"></textarea>
+                            <textarea name="message" id="message"></textarea>
                             <label for="text" class="title_fz12">Ваше сообщение</label>
+                        </div>
+
+                        <div class="contacts__form-captcha">
+                            <div class="g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh"></div>
                         </div>
 
                         <div class="contacts__form-triggers">
@@ -626,9 +630,6 @@
                                 </span>
                             </div>
                         </div>
-
-                        <div class="contacts__form-captcha g-recaptcha" data-sitekey="6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh">
-                        </div>
                     </form>
 
                 </div>
@@ -636,9 +637,8 @@
         </div>
     </section>
 
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdN6m4pAAAAAJF__ahXHRFOe1CJt12CxXBN5Yyh" async defer>
-    </script>
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
