@@ -21,7 +21,6 @@ function closeTab() {
 setTimeout(closeTab, 1500);
 
 
-
 const counters = document.querySelectorAll('.range'),
       lines = document.querySelectorAll('.skills__progress__scale span');
 
@@ -47,4 +46,12 @@ function submitForm() {
         }
     };
     xhr.send(formData);
+}
+
+function showPopup() {
+    document.getElementById('privacyPopup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('privacyPopup').style.display = 'none';
 }

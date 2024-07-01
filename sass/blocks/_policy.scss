@@ -1,3 +1,16 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
 .policy{
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, #92ddff 100%);
     position: relative;
