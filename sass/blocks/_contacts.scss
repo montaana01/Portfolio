@@ -109,6 +109,7 @@
             grid-template-columns: repeat(2, auto);
             column-gap: 35px;
         }
+
         &-btn{
             width: 219px;
             flex-shrink: 0;
@@ -119,14 +120,19 @@
             input{
                 width: 11px;
                 height: 11px;
-
             }
-            span{
+            label{
+                position: relative;
+                left: 0;
+                top: 0;
+                height: 45px;
                 margin-left: 10px;
                 font-size: 12px;
                 line-height: 45px;
             }
         }
+
+
         &-captcha{
             grid-column: 1/3;
         }

@@ -1183,7 +1183,11 @@ template {
   width: 11px;
   height: 11px;
 }
-.contacts__form-policy span {
+.contacts__form-policy label {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 45px;
   margin-left: 10px;
   font-size: 12px;
   line-height: 45px;
@@ -1192,23 +1196,45 @@ template {
   grid-column: 1/3;
 }
 
-.popup {
+.popup-overlay {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: #fff;
+  padding: 5px;
+  background-color: #f9f9f9;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 1001;
+  max-height: 90%;
+  overflow-y: auto;
+}
+.popup-content .container {
+  margin: 0 25px 25px;
+}
+
+.close-button {
+  position: sticky;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .policy {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, #92ddff 100%);
   position: relative;
-  padding-top: 40px;
 }
 .policy h1, .policy h2 {
   text-align: center;
@@ -1231,6 +1257,10 @@ template {
 .policy__back:hover {
   background-color: rgba(220, 245, 255, 0.3);
   border-color: #0b67bd;
+}
+.policy-content-btn {
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 1300px) {

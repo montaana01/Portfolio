@@ -49,9 +49,13 @@ function submitForm() {
 }
 
 function showPopup() {
-    document.getElementById('privacyPopup').style.display = 'block';
+    document.getElementById('privacyOverlay').style.display = 'block';
+    document.getElementById('privacyCheckbox').removeAttribute('disabled');
 }
 
 function closePopup() {
-    document.getElementById('privacyPopup').style.display = 'none';
+    document.getElementById('privacyOverlay').style.display = 'none';
+}
+function scrollToTop() {
+    document.querySelector('.popup-content').scrollTop = 0;
 }
